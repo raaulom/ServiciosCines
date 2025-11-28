@@ -1,6 +1,12 @@
 package org.example.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "empleados")
 public class Empleado {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEmpleado;
     private String nombre;
     private String puesto;
