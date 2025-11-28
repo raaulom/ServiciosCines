@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.ConexionBd;
+import org.example.repository.ConexionBd;
 import org.example.model.proyecciones;
 import java.sql.*;
 import java.util.ArrayList;
