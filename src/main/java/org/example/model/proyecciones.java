@@ -1,19 +1,33 @@
 package org.example.model;
 
-import java.time.LocalDate;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "proyecciones")
 public class proyecciones {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_proyeccion;
+
     private int id_pelicula;
     private int id_sala;
-    private LocalDate fecha_hora_inicio;
-    private LocalDate fecha_hora_fin;
+
+    private LocalDateTime fecha_hora_inicio;
+    private LocalDateTime fecha_hora_fin;
+
     private int precio_entrada;
     private int asientos_disponibles;
 
+    // Constructor vacío requerido por JPA
+    public proyecciones() {
+    }
+
+    // Constructor con parámetros
     public proyecciones(int id_proyeccion, int id_pelicula, int id_sala,
-                        LocalDate fecha_hora_inicio, LocalDate fecha_hora_fin,
-                        int precio_entrada, int asientos_disponibles) {
+                      LocalDateTime fecha_hora_inicio, LocalDateTime fecha_hora_fin,
+                      int precio_entrada, int asientos_disponibles) {
 
         this.id_proyeccion = id_proyeccion;
         this.id_pelicula = id_pelicula;
@@ -48,19 +62,19 @@ public class proyecciones {
         this.id_sala = id_sala;
     }
 
-    public LocalDate getFecha_hora_inicio() {
+    public LocalDateTime getFecha_hora_inicio() {
         return fecha_hora_inicio;
     }
 
-    public void setFecha_hora_inicio(LocalDate fecha_hora_inicio) {
+    public void setFecha_hora_inicio(LocalDateTime fecha_hora_inicio) {
         this.fecha_hora_inicio = fecha_hora_inicio;
     }
 
-    public LocalDate getFecha_hora_fin() {
+    public LocalDateTime getFecha_hora_fin() {
         return fecha_hora_fin;
     }
 
-    public void setFecha_hora_fin(LocalDate fecha_hora_fin) {
+    public void setFecha_hora_fin(LocalDateTime fecha_hora_fin) {
         this.fecha_hora_fin = fecha_hora_fin;
     }
 
@@ -82,7 +96,7 @@ public class proyecciones {
 
     @Override
     public String toString() {
-        return "proyecciones{" +
+        return "Proyeccion{" +
                 "id_proyeccion=" + id_proyeccion +
                 ", id_pelicula=" + id_pelicula +
                 ", id_sala=" + id_sala +
@@ -93,3 +107,4 @@ public class proyecciones {
                 '}';
     }
 }
+

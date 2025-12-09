@@ -1,23 +1,35 @@
 package org.example.model;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "peliculas")
 public class peliculas {
-        private int id_pelicula;
-        private String titulo;
-        private int duracion_minutos;
-        private String genero;
-        private String clasificacion;
-        private String director;
-        private String sinopsis;
-        private LocalDate fecha_estreno;
-        private int popularidad;
-        private boolean activa;
-        private LocalDate fecha_baja;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_pelicula;
+
+    private String titulo;
+    private int duracion_minutos;
+    private String genero;
+    private String clasificacion;
+    private String director;
+    private String sinopsis;
+    private LocalDate fecha_estreno;
+    private int popularidad;
+    private boolean activa;
+    private LocalDate fecha_baja;
+
+    // Constructor vacío requerido por JPA
+    public peliculas() {
+    }
+
+    // Constructor con parámetros (si lo necesitas)
     public peliculas(int id_pelicula, String titulo, int duracion_minutos, String genero,
-                     String clasificacion, String director, String sinopsis,
-                     LocalDate fecha_estreno, int popularidad, boolean activa, LocalDate fecha_baja) {
+                    String clasificacion, String director, String sinopsis,
+                    LocalDate fecha_estreno, int popularidad, boolean activa, LocalDate fecha_baja) {
         this.id_pelicula = id_pelicula;
         this.titulo = titulo;
         this.duracion_minutos = duracion_minutos;
@@ -121,7 +133,7 @@ public class peliculas {
 
     @Override
     public String toString() {
-        return "peliculas{" +
+        return "Pelicula{" +
                 "id_pelicula=" + id_pelicula +
                 ", titulo='" + titulo + '\'' +
                 ", duracion_minutos=" + duracion_minutos +
@@ -136,3 +148,4 @@ public class peliculas {
                 '}';
     }
 }
+
