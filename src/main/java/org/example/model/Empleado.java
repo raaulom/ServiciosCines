@@ -12,12 +12,12 @@ public class Empleado {
     private String puesto;
     private String tipoJornada;
     private String email;
-    private int telefono;
+    private String telefono;
     private String fechaContratacion;
     private double salarioHora;
     private boolean activo;
 
-    public Empleado (int idEmpleado, String nombre, String puesto, String tipoJornada, String email, int telefono, String fechaContratacion, double salarioHora, boolean activo ) {
+    public Empleado (int idEmpleado, String nombre, String puesto, String tipoJornada, String email, String telefono, String fechaContratacion, double salarioHora, boolean activo ) {
         this.nombre = nombre;
         this.puesto = puesto;
         this.tipoJornada = tipoJornada;
@@ -68,11 +68,11 @@ public class Empleado {
         this.email = email;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

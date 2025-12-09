@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/empleados")
+@RestController //indica que esta clase manejará peticiones REST
+@RequestMapping("/empleados") //// Prefijo para todos los endpoints relacionados con Aula
 public class EmpleadoController {
 
     private final EmpleadoService service;
