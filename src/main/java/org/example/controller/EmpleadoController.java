@@ -1,7 +1,7 @@
 package org.example.controller;
 
 import org.example.model.Empleado;
-import org.example.service.EmpleadoService;
+import org.example.service.EmpleadoServices;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,9 +10,9 @@ import java.util.List;
 @RequestMapping("/empleados") //// Prefijo para todos los endpoints relacionados con Aula
 public class EmpleadoController {
 
-    private final EmpleadoService service;
+    private final EmpleadoServices service;
 
-    public EmpleadoController(EmpleadoService service) {
+    public EmpleadoController(EmpleadoServices service) {
         this.service = service;
     }
 

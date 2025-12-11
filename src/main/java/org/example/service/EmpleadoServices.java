@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmpleadoService {
+public class EmpleadoServices {
 
     private final EmpleadoRepository repo;
 
-    public EmpleadoService(EmpleadoRepository repo) {
+    public EmpleadoServices(EmpleadoRepository repo) {
         this.repo = repo;
     }
 

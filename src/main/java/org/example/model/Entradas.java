@@ -9,42 +9,40 @@ public class Entradas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_entrada;
-    private int id_proyeccion;
+    private int idEntrada;
+
+    @ManyToOne
+    @JoinColumn(name = "id_proyeccion", nullable = false)
+    private proyecciones proyeccion;
+
     private String asiento;
     private double precio;
-    private LocalDateTime fecha_compra;
+    private LocalDateTime fechaCompra;
     private boolean activa;
+    private String metodoPago;
 
+    public Entradas() {}
 
-    public Entradas() {
-    }
-
-    public Entradas(int id_entrada, int id_proyeccion, String asiento,
-                   double precio, LocalDateTime fecha_compra, boolean activa) {
-
-        this.id_entrada = id_entrada;
-        this.id_proyeccion = id_proyeccion;
+    public Entradas(proyecciones proyeccion, String asiento, double precio,
+                    LocalDateTime fechaCompra, boolean activa, String metodoPago) {
+        this.proyeccion = proyeccion;
         this.asiento = asiento;
         this.precio = precio;
-        this.fecha_compra = fecha_compra;
+        this.fechaCompra = fechaCompra;
         this.activa = activa;
+        this.metodoPago = metodoPago;
     }
 
-    public int getId_entrada() {
-        return id_entrada;
+    public int getIdEntrada() {
+        return idEntrada;
     }
 
-    public void setId_entrada(int id_entrada) {
-        this.id_entrada = id_entrada;
+    public proyecciones getProyeccion() {
+        return proyeccion;
     }
 
-    public int getId_proyeccion() {
-        return id_proyeccion;
-    }
-
-    public void setId_proyeccion(int id_proyeccion) {
-        this.id_proyeccion = id_proyeccion;
+    public void setProyeccion(proyecciones proyeccion) {
+        this.proyeccion = proyeccion;
     }
 
     public String getAsiento() {
@@ -63,12 +61,12 @@ public class Entradas {
         this.precio = precio;
     }
 
-    public LocalDateTime getFecha_compra() {
-        return fecha_compra;
+    public LocalDateTime getFechaCompra() {
+        return fechaCompra;
     }
 
-    public void setFecha_compra(LocalDateTime fecha_compra) {
-        this.fecha_compra = fecha_compra;
+    public void setFechaCompra(LocalDateTime fechaCompra) {
+        this.fechaCompra = fechaCompra;
     }
 
     public boolean isActiva() {
@@ -79,16 +77,12 @@ public class Entradas {
         this.activa = activa;
     }
 
-    @Override
-    public String toString() {
-        return "Entrada{" +
-                "id_entrada=" + id_entrada +
-                ", id_proyeccion=" + id_proyeccion +
-                ", asiento='" + asiento + '\'' +
-                ", precio=" + precio +
-                ", fecha_compra=" + fecha_compra +
-                ", activa=" + activa +
-                '}';
+    public String getMetodoPago() {
+        return metodoPago;
+    }
+
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
     }
 }
 

@@ -9,102 +9,99 @@ public class proyecciones {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_proyeccion;
+    private int idProyeccion;
 
-    private int id_pelicula;
-    private int id_sala;
+    private int idPelicula;
+    private int idSala;
 
-    private LocalDateTime fecha_hora_inicio;
-    private LocalDateTime fecha_hora_fin;
+    private LocalDateTime fechaHoraInicio;
+    private LocalDateTime fechaHoraFin;
 
-    private int precio_entrada;
-    private int asientos_disponibles;
+    private int precioEntrada;
+    private int asientosDisponibles;
 
-    // Constructor vacío requerido por JPA
     public proyecciones() {
     }
 
-    // Constructor con parámetros
-    public proyecciones(int id_proyeccion, int id_pelicula, int id_sala,
-                      LocalDateTime fecha_hora_inicio, LocalDateTime fecha_hora_fin,
-                      int precio_entrada, int asientos_disponibles) {
+    public proyecciones(int idProyeccion, int idPelicula, int idSala,
+                        LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin,
+                        int precioEntrada, int asientosDisponibles) {
 
-        this.id_proyeccion = id_proyeccion;
-        this.id_pelicula = id_pelicula;
-        this.id_sala = id_sala;
-        this.fecha_hora_inicio = fecha_hora_inicio;
-        this.fecha_hora_fin = fecha_hora_fin;
-        this.precio_entrada = precio_entrada;
-        this.asientos_disponibles = asientos_disponibles;
+        this.idProyeccion = idProyeccion;
+        this.idPelicula = idPelicula;
+        this.idSala = idSala;
+        this.fechaHoraInicio = fechaHoraInicio;
+        this.fechaHoraFin = fechaHoraFin;
+        this.precioEntrada = precioEntrada;
+        this.asientosDisponibles = asientosDisponibles;
     }
 
-    public int getId_proyeccion() {
-        return id_proyeccion;
+    public int getIdProyeccion() {
+        return idProyeccion;
     }
 
-    public void setId_proyeccion(int id_proyeccion) {
-        this.id_proyeccion = id_proyeccion;
+    public void setIdProyeccion(int idProyeccion) {
+        this.idProyeccion = idProyeccion;
     }
 
-    public int getId_pelicula() {
-        return id_pelicula;
+    public int getIdPelicula() {
+        return idPelicula;
     }
 
-    public void setId_pelicula(int id_pelicula) {
-        this.id_pelicula = id_pelicula;
+    public void setIdPelicula(int idPelicula) {
+        this.idPelicula = idPelicula;
     }
 
-    public int getId_sala() {
-        return id_sala;
+    public int getIdSala() {
+        return idSala;
     }
 
-    public void setId_sala(int id_sala) {
-        this.id_sala = id_sala;
+    public void setIdSala(int idSala) {
+        this.idSala = idSala;
     }
 
-    public LocalDateTime getFecha_hora_inicio() {
-        return fecha_hora_inicio;
+    public LocalDateTime getFechaHoraInicio() {
+        return fechaHoraInicio;
     }
 
-    public void setFecha_hora_inicio(LocalDateTime fecha_hora_inicio) {
-        this.fecha_hora_inicio = fecha_hora_inicio;
+    public void setFechaHoraInicio(LocalDateTime fechaHoraInicio) {
+        this.fechaHoraInicio = fechaHoraInicio;
     }
 
-    public LocalDateTime getFecha_hora_fin() {
-        return fecha_hora_fin;
+    public LocalDateTime getFechaHoraFin() {
+        return fechaHoraFin;
     }
 
-    public void setFecha_hora_fin(LocalDateTime fecha_hora_fin) {
-        this.fecha_hora_fin = fecha_hora_fin;
+    public void setFechaHoraFin(LocalDateTime fechaHoraFin) {
+        this.fechaHoraFin = fechaHoraFin;
     }
 
-    public int getPrecio_entrada() {
-        return precio_entrada;
+    public int getPrecioEntrada() {
+        return precioEntrada;
     }
 
-    public void setPrecio_entrada(int precio_entrada) {
-        this.precio_entrada = precio_entrada;
+    public void setPrecioEntrada(int precioEntrada) {
+        this.precioEntrada = precioEntrada;
     }
 
-    public int getAsientos_disponibles() {
-        return asientos_disponibles;
+    public int getAsientosDisponibles() {
+        return asientosDisponibles;
     }
 
-    public void setAsientos_disponibles(int asientos_disponibles) {
-        this.asientos_disponibles = asientos_disponibles;
+    public void setAsientosDisponibles(int asientosDisponibles) {
+        this.asientosDisponibles = asientosDisponibles;
     }
 
     @Override
     public String toString() {
         return "Proyeccion{" +
-                "id_proyeccion=" + id_proyeccion +
-                ", id_pelicula=" + id_pelicula +
-                ", id_sala=" + id_sala +
-                ", fecha_hora_inicio=" + fecha_hora_inicio +
-                ", fecha_hora_fin=" + fecha_hora_fin +
-                ", precio_entrada=" + precio_entrada +
-                ", asientos_disponibles=" + asientos_disponibles +
+                "idProyeccion=" + idProyeccion +
+                ", idPelicula=" + idPelicula +
+                ", idSala=" + idSala +
+                ", fechaHoraInicio=" + fechaHoraInicio +
+                ", fechaHoraFin=" + fechaHoraFin +
+                ", precioEntrada=" + precioEntrada +
+                ", asientosDisponibles=" + asientosDisponibles +
                 '}';
     }
 }
-
