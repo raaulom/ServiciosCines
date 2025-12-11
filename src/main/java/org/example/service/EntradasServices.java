@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class EntradasService {
+public class EntradasServices {
 
     private final EntradasRepository entradasRepository;
     private final ProyeccionesRepository proyeccionesRepository;
 
-    public EntradasService(EntradasRepository entradasRepository, ProyeccionesRepository proyeccionesRepository) {
+    public EntradasServices(EntradasRepository entradasRepository, ProyeccionesRepository proyeccionesRepository) {
         this.entradasRepository = entradasRepository;
         this.proyeccionesRepository = proyeccionesRepository;
     }
@@ -41,7 +41,7 @@ public class EntradasService {
                 .orElseThrow(() -> new RuntimeException("Entrada no encontrada"));
 
         if (!entrada.isActiva()) {
-            throw new RuntimeException("La entrada ya ha sido devuelta o está inactiva");
+            throw new RuntimeException("La entrada ya ha sido devuelta");
         }
 
         entrada.setActiva(false);
